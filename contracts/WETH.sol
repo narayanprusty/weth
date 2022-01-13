@@ -10,6 +10,14 @@ contract WETH is ERC20 {
 
   function withdraw(uint256 amount) public {
     _burn(msg.sender, amount);
+
+    /**
+    * transfer (throws error) and send (returns bool) have 
+    * 2300 gas limit so not recommended
+    * 
+    * using "call" you can provide custom gas or supply all the
+    * gas of the transaction so its recommended
+    */
     (bool sent,) = msg.sender.call{value: amount}("");
     require(sent, "Failed to send Ether");
   }
