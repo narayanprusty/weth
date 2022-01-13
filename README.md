@@ -1,15 +1,11 @@
-# Basic Sample Hardhat Project
+# WETH
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+This is a ERC20 which represents wrapped Ethereum. This is used to convert ETH to ERC20 so that ERC20 only compatiable DApps/Contracts can transact with ETH. 
 
 Try running some of the following tasks:
 
 ```shell
 npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
 npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
+npx hardhat run scripts/deploy.js --network ropsten
 ```
